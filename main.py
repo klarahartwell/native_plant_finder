@@ -349,7 +349,7 @@ set_site_information(
     author="Klara Hartwell",
     description="Find native plants for your garden based on your region, gardening level, and space.",
     sources="Plant data: bplant.org, \"Ecoregions of North America.\" Map: U.S. EPA, \"Level III and IV Ecoregions of the Continental United States.\"",
-    planning=[],
+    planning=["brainstorm.pdf", "design.pdf"],
     links=["https://github.com/your-username/your-repository"]
 )
 hide_debug_information()
