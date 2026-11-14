@@ -258,6 +258,7 @@ def results_page(state: State) -> Page:
             else:
                 content.append("Foliage only")
             content.append(LineBreak())
+        # Advanced technique: a list comprehension builds a list of plant names for the dropdown
         content.append("Pick a plant to save:")
         content.append(SelectBox("plant_name",
                                  [p.name for p in state.recommended_plants],
@@ -266,8 +267,8 @@ def results_page(state: State) -> Page:
         content.append(LineBreak())
         content.append("Saved so far: " + str(len(state.saved_plants)))
         content.append(Button("View my garden plan", plan_page))
-        content.append(LineBreak())
-        content.append(Button("Start over", start_over))
+    content.append(LineBreak())
+    content.append(Button("Start over", start_over))
     return Page(state, content)
 
 @route
@@ -334,15 +335,6 @@ def remove_plant(state: State, plant_name: str) -> Page:
             kept.append(plant)
     state.saved_plants = kept
     return plan_page(state)
-
-@route
-def start_over(state: State) -> Page:
-    state.location = ""
-    state.gardening_level = "beginner"
-    state.space_sqft = 0
-    state.recommended_plants = []
-    state.saved_plants = []
-    return index(state)
 
 set_website_title("Native Plant Finder")
 set_site_information(
