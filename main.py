@@ -113,7 +113,7 @@ MONTH_NAMES = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "O
 @route
 def index(state: State) -> Page:
     return Page(state, [
-        "Native Plant Finder",
+        Header("Native Plant Finder", 1)
         LineBreak(),
         "Find native plants for your garden in DE, NJ, and PA.",
         LineBreak(),
